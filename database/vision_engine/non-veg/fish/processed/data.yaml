@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 10
+names: ['Bangus', 'Big-Head-Carp', 'Black-Spotted-Barb', 'Catfish', 'Climbing-Perch', 'Fourfinger-Threadfin', 'Freshwater-Eel', 'Glass-Perchlet', 'Goby', 'Gold-Fish']
+
+roboflow:
+  workspace: nevin-q1id7
+  project: fish-class-5pnkz
+  version: 1
+  license: Public Domain
+  url: https://universe.roboflow.com/nevin-q1id7/fish-class-5pnkz/dataset/1
