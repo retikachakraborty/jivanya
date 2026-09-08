@@ -1,0 +1,169 @@
+{
+  "test_images": 1113,
+  "correct": 1085,
+  "incorrect": 28,
+  "accuracy_percent": 97.48,
+  "classes": [
+    "Asafoetida",
+    "Bay Leaf",
+    "Black Cardamom",
+    "Black Pepper",
+    "Caraway seeds",
+    "Cinnamom stick",
+    "Cloves",
+    "Coriander Seeds",
+    "Cubeb Pepper",
+    "Cumin seeds",
+    "Dry Ginger",
+    "Dry red Chilly",
+    "Fennel seeds",
+    "Green Cardamom",
+    "Mace",
+    "Nutmeg",
+    "Poppy Seeds",
+    "Star Anise",
+    "Stone Flowers"
+  ],
+  "misclassifications": [
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Black Cardamom/BlackCardamom157.jpg",
+      "actual": "Black Cardamom",
+      "predicted": "Cloves"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Black Cardamom/BlackCardamom167.jpg",
+      "actual": "Black Cardamom",
+      "predicted": "Cloves"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Black Cardamom/BlackCardamom199.jpg",
+      "actual": "Black Cardamom",
+      "predicted": "Cloves"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Cinnamom stick/CinnamomStick2.jpg",
+      "actual": "Cinnamom stick",
+      "predicted": "Mace"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Cinnamom stick/CinnamomStick28.jpg",
+      "actual": "Cinnamom stick",
+      "predicted": "Mace"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Cinnamom stick/CinnamomStick312.jpg",
+      "actual": "Cinnamom stick",
+      "predicted": "Mace"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Cinnamom stick/CinnamomStick338.jpg",
+      "actual": "Cinnamom stick",
+      "predicted": "Mace"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Cinnamom stick/CinnamomStick443.jpg",
+      "actual": "Cinnamom stick",
+      "predicted": "Star Anise"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Fennel seeds/FennelSeeds148.jpg",
+      "actual": "Fennel seeds",
+      "predicted": "Caraway seeds"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Fennel seeds/FennelSeeds26.jpg",
+      "actual": "Fennel seeds",
+      "predicted": "Nutmeg"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Fennel seeds/FennelSeeds28.jpg",
+      "actual": "Fennel seeds",
+      "predicted": "Nutmeg"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Mace/Mace437.jpg",
+      "actual": "Mace",
+      "predicted": "Dry red Chilly"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Mace/Mace516.jpg",
+      "actual": "Mace",
+      "predicted": "Dry red Chilly"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Nutmeg/Nutmeg148.jpg",
+      "actual": "Nutmeg",
+      "predicted": "Black Cardamom"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Nutmeg/Nutmeg198.jpg",
+      "actual": "Nutmeg",
+      "predicted": "Cloves"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Nutmeg/Nutmeg207.jpg",
+      "actual": "Nutmeg",
+      "predicted": "Cloves"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Nutmeg/Nutmeg209.jpg",
+      "actual": "Nutmeg",
+      "predicted": "Black Cardamom"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Nutmeg/Nutmeg212.jpg",
+      "actual": "Nutmeg",
+      "predicted": "Black Cardamom"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Nutmeg/Nutmeg216.jpg",
+      "actual": "Nutmeg",
+      "predicted": "Black Cardamom"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Nutmeg/Nutmeg225.jpg",
+      "actual": "Nutmeg",
+      "predicted": "Cloves"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Nutmeg/Nutmeg318.jpg",
+      "actual": "Nutmeg",
+      "predicted": "Black Cardamom"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Nutmeg/Nutmeg7.jpg",
+      "actual": "Nutmeg",
+      "predicted": "Cloves"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Nutmeg/Nutmeg79.jpg",
+      "actual": "Nutmeg",
+      "predicted": "Cloves"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Star Anise/StarAnise103.jpg",
+      "actual": "Star Anise",
+      "predicted": "Dry red Chilly"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Stone Flowers/StoneFlowers14.jpg",
+      "actual": "Stone Flowers",
+      "predicted": "Cubeb Pepper"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Stone Flowers/StoneFlowers53.jpg",
+      "actual": "Stone Flowers",
+      "predicted": "Cubeb Pepper"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Stone Flowers/StoneFlowers674.jpg",
+      "actual": "Stone Flowers",
+      "predicted": "Fennel seeds"
+    },
+    {
+      "image": "/home/mousumi/Documents/final project/jivanya/database/vision_engine/spices/processed/indian_spices/test/Stone Flowers/StoneFlowers837.jpg",
+      "actual": "Stone Flowers",
+      "predicted": "Fennel seeds"
+    }
+  ]
+}
