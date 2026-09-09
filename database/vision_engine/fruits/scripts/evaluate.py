@@ -5,14 +5,12 @@ ROOT = Path(__file__).resolve().parents[4]
 
 MODEL = (
     ROOT
-    / "database/vision_engine/fruits/models/final/"
-      "fruits_yolo11n.pt"
+    / "database/vision_engine/fruits/models/final/fruits_yolo11n.pt"
 )
 
 DATA = (
     ROOT
-    / "database/vision_engine/fruits/raw/"
-      "fruit_detection/Fruits-detection/data.yaml"
+    / "database/vision_engine/fruits/processed/data.yaml"
 )
 
 model = YOLO(MODEL)

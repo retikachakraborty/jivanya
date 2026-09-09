@@ -4,7 +4,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 MODEL = ROOT / "models" / "final" / "vegetables_yolo11n.pt"
-DATA = ROOT / "raw" / "emam_v14" / "data.yaml"
+DATA = ROOT / "processed" / "data.yaml"
 
 model = YOLO(str(MODEL))
 

@@ -5,8 +5,7 @@ ROOT = Path(__file__).resolve().parents[4]
 
 DATA = (
     ROOT
-    / "database/vision_engine/fruits/raw/"
-      "fruit_detection/Fruits-detection/data.yaml"
+    / "database/vision_engine/fruits/processed/data.yaml"
 )
 
 RUNS = ROOT / "database/vision_engine/fruits/runs/detect"

@@ -15,7 +15,7 @@ Primary dataset:
 ## Structure
 
 - `raw/` — original downloaded dataset
-- `processed/` — cleaned/final datasets if needed
+- `processed/` — final training-ready dataset used for YOLO training
 - `metadata/` — class metadata and image manifest
 - `models/final/` — final trained model
 - `scripts/` — preparation, prediction and evaluation utilities

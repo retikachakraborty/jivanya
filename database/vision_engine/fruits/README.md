@@ -14,8 +14,8 @@ YOLO11n to identify common fruits from images.
 
 ## Structure
 
-- `raw/` - original fruit detection dataset
-- `processed/` - reserved for processed dataset variants
+- `raw/` - original downloaded fruit dataset
+- `processed/` - final training-ready fruit dataset used for YOLO training
 - `metadata/` - class information and image manifest
 - `models/final/` - final trained model
 - `scripts/` - training, evaluation and prediction scripts

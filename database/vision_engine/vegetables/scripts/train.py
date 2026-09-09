@@ -2,7 +2,7 @@ from ultralytics import YOLO
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "raw" / "emam_v14" / "data.yaml"
+DATA = ROOT / "processed" / "data.yaml"
 
 model = YOLO("yolo11n.pt")
 
