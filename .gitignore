@@ -77,6 +77,8 @@ database/vision_engine/indian_ingredients/yolo11n-seg/
 *.zip
 *.tar
 *.tar.gz
+!database/vision_engine/indian_lentils/raw/
+!database/vision_engine/indian_lentils/raw/Indian_Lentils.zip
 *.7z
 *.rar
 
