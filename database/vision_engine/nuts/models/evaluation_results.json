@@ -1,0 +1,23 @@
+{
+  "test_images": 352,
+  "correct": 352,
+  "incorrect": 0,
+  "accuracy_percent": 100.0,
+  "classes": [
+    "Almond",
+    "Brazil Nuts",
+    "Cashew",
+    "Hazelnuts",
+    "Macademia",
+    "Peanut",
+    "Pistachio",
+    "Thai Peanut",
+    "Vietnamian Cashew",
+    "Walnuts"
+  ],
+  "model": "YOLOv8n Classification",
+  "image_size": "224x224",
+  "epochs": 10,
+  "batch_size": 16,
+  "device": "CPU"
+}

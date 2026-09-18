@@ -1,0 +1,39 @@
+{
+  "validation_images": 1035,
+  "correct": 1035,
+  "incorrect": 0,
+  "accuracy_percent": 100.0,
+  "classes": [
+    "Black_Beans",
+    "Black_EyedPea",
+    "Brown_Chickpea",
+    "chana1",
+    "chana2",
+    "Desi_chickpea",
+    "Horse_Gram",
+    "Husked_BlackGram",
+    "Husked_RedLentil",
+    "Kidney_Bean",
+    "Red_Beans",
+    "Red_chickpea",
+    "Red_KidneyBean",
+    "Soya_Bean",
+    "White_beans",
+    "White_Chickpea",
+    "White_peabeans",
+    "Whole_BlackGram",
+    "Whole_GreenGram",
+    "Whole_TurkishGram"
+  ],
+  "model": "YOLO11n Classification",
+  "image_size": "224x224",
+  "epochs": 10,
+  "batch_size": 16,
+  "device": "CPU",
+  "dataset": {
+    "train_images": 7505,
+    "validation_images": 1035,
+    "exact_sha256_duplicates": 0,
+    "phash_matches_removed": 850
+  }
+}

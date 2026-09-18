@@ -1,0 +1,26 @@
+train: train
+val: val
+test: test
+
+nc: 20
+names:
+  - Black_Beans
+  - Black_EyedPea
+  - Brown_Chickpea
+  - chana1
+  - chana2
+  - Desi_chickpea
+  - Horse_Gram
+  - Husked_BlackGram
+  - Husked_RedLentil
+  - Kidney_Bean
+  - Red_Beans
+  - Red_chickpea
+  - Red_KidneyBean
+  - Soya_Bean
+  - White_beans
+  - White_Chickpea
+  - White_peabeans
+  - Whole_BlackGram
+  - Whole_GreenGram
+  - Whole_TurkishGram

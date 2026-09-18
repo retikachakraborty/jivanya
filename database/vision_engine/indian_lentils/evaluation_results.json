@@ -1,0 +1,63 @@
+{
+  "dataset": "Indian Lentils",
+  "task": "Image Classification",
+  "model": "YOLO11n-cls",
+  "framework": "Ultralytics",
+  "image_size": 224,
+  "epochs": 10,
+  "batch_size": 16,
+  "device": "CPU",
+  "hardware": "AMD Ryzen 9 5900HX",
+
+  "original_split": {
+    "train_images": 7505,
+    "validation_images": 1885,
+    "top1_accuracy": 1.0,
+    "top5_accuracy": 1.0
+  },
+
+  "leakage_investigation": {
+    "sha256_cross_split_duplicates": 0,
+    "phash_distance_0_pairs": 785,
+    "phash_distance_2_pairs": 2745,
+    "phash_distance_4_pairs": 4325,
+    "validation_images_with_phash_distance_lte_2": 850
+  },
+
+  "clean_split": {
+    "train_images": 7505,
+    "validation_images": 1035,
+    "classes": 20,
+    "strong_phash_matches_remaining": 0
+  },
+
+  "clean_model_results": {
+    "top1_accuracy": 1.0,
+    "top5_accuracy": 1.0,
+    "per_class_accuracy": 1.0,
+    "misclassified_images": 0,
+    "inference_ms_per_image": 1.9,
+    "model_size_mb": 3.2
+  },
+
+  "model_files": {
+    "original_model": "models/final/indian_lentils_yolo11n_cls.pt",
+    "clean_model": "models/final/indian_lentils_yolo11n_cls_clean.pt"
+  },
+
+  "evaluation_artifacts": {
+    "confusion_matrix": "metadata/evaluation/confusion_matrix.png",
+    "normalized_confusion_matrix": "metadata/evaluation/confusion_matrix_normalized.png",
+    "validation_labels": "metadata/evaluation/val_batch0_labels.jpg",
+    "validation_predictions": "metadata/evaluation/val_batch0_pred.jpg"
+  },
+
+  "notes": [
+    "The original train/validation split contained substantial perceptual overlap.",
+    "A clean validation split was created by excluding validation images with pHash distance <= 2 from training images.",
+    "The clean validation set contained 1035 images across all 20 classes.",
+    "The clean validation set passed a final pHash distance <= 2 cross-split check with zero remaining matches.",
+    "The clean model achieved 100% Top-1 and Top-5 accuracy on the clean validation set.",
+    "The confusion matrix contained only diagonal predictions."
+  ]
+}
