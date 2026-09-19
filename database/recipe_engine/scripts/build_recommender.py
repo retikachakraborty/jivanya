@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-RECIPES_PATH = "database/processed/recipes_recommendation.csv"
+RECIPES_PATH = "database/recipe_engine/processed/recipes_recommendation.csv"
 
 
 def parse_ingredient_list(value):

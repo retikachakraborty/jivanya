@@ -6,11 +6,11 @@ import pandas as pd
 
 
 INPUT_FILE = Path(
-    "data/raw/openfoodfacts/openfoodfacts_india_raw.jsonl"
+    "database/market_engine/raw/openfoodfacts/openfoodfacts_india_raw.jsonl"
 )
 
 OUTPUT_FILE = Path(
-    "data/processed/products_india_clean.csv"
+    "database/market_engine/processed/products_india_clean.csv"
 )
 
 
