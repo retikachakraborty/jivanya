@@ -9,3 +9,6 @@ requests==2.34.2
 torch==2.14.0
 torchvision==0.29.0
 ultralytics==8.4.155
+python-dotenv
+psycopg2-binary
+python-multipart

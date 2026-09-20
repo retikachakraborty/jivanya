@@ -88,3 +88,9 @@ database/vision_engine/indian_ingredients/yolo11n-seg/
 *.log
 tmp/
 temp/
+
+# Secrets
+.env
+.env.local
+.env.*.local
+!.env.example
