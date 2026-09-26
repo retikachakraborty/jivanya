@@ -1,0 +1,6 @@
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 17
+names: ['alcohol', 'alcohol_glass', 'bread', 'bread_loaf', 'capsicum', 'cheese', 'chocolate', 'cooked_meat', 'dates', 'eggplant', 'icecream', 'milk', 'milk_based_beverage', 'mushroom', 'non_milk_based_beverage', 'raw_meat', 'spinach']

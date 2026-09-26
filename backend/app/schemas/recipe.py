@@ -24,6 +24,7 @@ class RecipeListResponse(BaseModel):
     total: int
     offset: int
     limit: int
+    status: str = "FOUND"
     ignored_ingredients: list[str] = []
 
 class RecipeMatchRequest(BaseModel):

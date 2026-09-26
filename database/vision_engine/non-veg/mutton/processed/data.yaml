@@ -1,0 +1,9 @@
+path: /home/retika-chakraborty/Documents/jivanya/database/vision_engine/non_veg_engine/mutton/processed
+
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 1
+names:
+  0: mutton

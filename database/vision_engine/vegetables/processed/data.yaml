@@ -1,0 +1,6 @@
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 24
+names: ['beetroot', 'bellpepper', 'cabbage', 'carrot', 'cauliflower', 'chillipepper', 'corn', 'cucumber', 'eggplant', 'garlic', 'ginger', 'jalapeno', 'ladyfinger', 'lemon', 'lettuce', 'onion', 'peas', 'potato', 'radish', 'spinach', 'sweetcorn', 'sweetpotato', 'tomato', 'turnip']

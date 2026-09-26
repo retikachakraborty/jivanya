@@ -1,0 +1,25 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 19
+names:
+  0: alcohol
+  1: alcohol_glass
+  2: bread
+  3: bread_loaf
+  4: capsicum
+  5: cheese
+  6: chocolate
+  7: cooked_meat
+  8: dates
+  9: egg
+  10: eggplant
+  11: icecream
+  12: milk
+  13: milk_based_beverage
+  14: mushroom
+  15: non_milk_based_beverage
+  16: raw_meat
+  17: spinach
+  18: whole_egg_boiled

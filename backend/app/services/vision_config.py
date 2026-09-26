@@ -16,37 +16,65 @@ class VisionModelConfig:
     checkpoint: Path
     task: str | None = None
     classes_file: Path | None = None
+    metadata_file: Path | None = None
 
 
-def _pt(name: str, module: str, model_type: str, relative: str, task: str | None = None) -> VisionModelConfig:
-    return VisionModelConfig(name, module, model_type, VISION_ROOT / relative, task)
+def _pt(name: str, module: str, model_type: str, relative: str, task: str | None = None,
+        metadata: str | None = None) -> VisionModelConfig:
+    return VisionModelConfig(name, module, model_type, VISION_ROOT / relative, task,
+                             metadata_file=VISION_ROOT / metadata if metadata else None)
 
 
 VISION_MODELS: dict[str, VisionModelConfig] = {
-    "allergen": _pt("allergen", "allergen", "yolo_detection", "allergen/models/final/allergen30_yolo11n.pt", "detect"),
-    "coffee": _pt("coffee", "coffee", "yolo_classification", "coffee/models/coffee_yolov8n.pt", "classify"),
-    "farmer_seed": _pt("farmer_seed", "farmer_seed", "yolo_segmentation", "farmer_seed/runs/segment/oversampled_sequel_farmer_5ep/weights/best.pt", "segment"),
-    "fruits": _pt("fruits", "fruits", "yolo_detection", "fruits/models/final/fruits_yolo11n.pt", "detect"),
-    "grocery": _pt("grocery", "grocery", "yolo_detection", "grocery/models/final/grocery_detection_yolo11n.pt", "detect"),
-    "grocery_segmentation": _pt("grocery_segmentation", "grocery", "yolo_segmentation", "grocery/models/final/indian_ingredients_yolo11n_seg.pt", "segment"),
-    "indian_lentils": _pt("indian_lentils", "indian_lentils", "yolo_classification", "indian_lentils/models/indian_lentils_yolo11n.pt", "classify"),
-    "chicken": _pt("chicken", "non-veg/chicken", "yolo_detection", "non-veg/chicken/models/final/chicken_yolov8n.pt", "detect"),
-    "egg": _pt("egg", "non-veg/egg", "yolo_detection", "non-veg/egg/models/final/egg_yolo11n.pt", "detect"),
-    "fish": _pt("fish", "non-veg/fish", "yolo_detection", "non-veg/fish/models/final/best.pt", "detect"),
-    "mutton": _pt("mutton", "non-veg/mutton", "yolo_detection", "non-veg/mutton/models/final/mutton_yolov8n.pt", "detect"),
-    "nuts": _pt("nuts", "nuts", "yolo_classification", "nuts/models/nuts_yolov8n.pt", "classify"),
-    "green_tea": _pt("green_tea", "tea/Green_Tea", "yolo_detection", "tea/Green_Tea/models/green_tea_yolov8n.pt", "detect"),
-    "red_tea": _pt("red_tea", "tea/Red_Tea", "yolo_detection", "tea/Red_Tea/models/red_tea_yolov8n.pt", "detect"),
-    "vegetables": _pt("vegetables", "vegetables", "yolo_detection", "vegetables/models/final/vegetables_yolo11n.pt", "detect"),
+    "allergen": _pt("allergen", "allergen", "yolo_detection", "allergen/models/final/allergen30_yolo11n.pt", "detect", "allergen/processed/allergen30_before_egg_removal/data.yaml"),
+    "coffee": _pt("coffee", "coffee", "yolo_classification", "coffee/models/coffee_yolov8n.pt", "classify", "coffee/models/coffee_classes.json"),
+    "farmer_seed": _pt("farmer_seed", "farmer_seed", "yolo_segmentation", "farmer_seed/models/final/farmer_seed_best.pt", "segment", "farmer_seed/processed/indian_ingredients/data.yaml"),
+    "fruits": _pt("fruits", "fruits", "yolo_detection", "fruits/models/final/fruits_yolo11n.pt", "detect", "fruits/processed/data.yaml"),
+    "grocery": _pt("grocery", "grocery", "yolo_detection", "grocery/models/final/grocery_detection_yolo11n.pt", "detect", "grocery/processed/grocery_detection_3class/data.yaml"),
+    "grocery_segmentation": _pt("grocery_segmentation", "grocery", "yolo_segmentation", "grocery/models/final/indian_ingredients_yolo11n_seg.pt", "segment", "grocery/processed/grocery_detection_3class/data.yaml"),
+    "indian_lentils": _pt("indian_lentils", "indian_lentils", "yolo_classification", "indian_lentils/models/indian_lentils_yolo11n.pt", "classify", "indian_lentils/models/indian_lentils_classes.json"),
+    "chicken": _pt("chicken", "non-veg/chicken", "yolo_detection", "non-veg/chicken/models/final/chicken_yolov8n.pt", "detect", "non-veg/chicken/processed/data.yaml"),
+    "egg": _pt("egg", "non-veg/egg", "yolo_detection", "non-veg/egg/models/final/egg_yolo11n.pt", "detect", "non-veg/egg/metadata/classes.csv"),
+    "fish": _pt("fish", "non-veg/fish", "yolo_detection", "non-veg/fish/models/final/best.pt", "detect", "non-veg/fish/processed/data.yaml"),
+    "mutton": _pt("mutton", "non-veg/mutton", "yolo_detection", "non-veg/mutton/models/final/mutton_yolov8n.pt", "detect", "non-veg/mutton/processed/data.yaml"),
+    "nuts": _pt("nuts", "nuts", "yolo_classification", "nuts/models/nuts_yolov8n.pt", "classify", "nuts/models/nuts_classes.json"),
+    "green_tea": _pt("green_tea", "tea/Green_Tea", "yolo_detection", "tea/Green_Tea/models/green_tea_yolov8n.pt", "detect", "tea/Green_Tea/processed/Green_Tea/data.yaml"),
+    "red_tea": _pt("red_tea", "tea/Red_Tea", "yolo_detection", "tea/Red_Tea/models/red_tea_yolov8n.pt", "detect", "tea/Red_Tea/processed/Red_Tea/data.yaml"),
+    "vegetables": _pt("vegetables", "vegetables", "yolo_detection", "vegetables/models/final/vegetables_yolo11n.pt", "detect", "vegetables/processed/data.yaml"),
     "spices": VisionModelConfig(
         "spices", "spices", "mobilenetv3_classification",
         VISION_ROOT / "spices/models/indian_spices_mobilenetv3.pth",
         classes_file=VISION_ROOT / "spices/models/indian_spices_classes.json",
+        metadata_file=VISION_ROOT / "spices/models/indian_spices_classes.json",
     ),
 }
 
 
 MODEL_ALIASES = {"grocery_seg": "grocery_segmentation", "farmer": "farmer_seed", "spice": "spices"}
+
+VISION_DISPLAY_NAMES = {
+    "allergen": "Allergens",
+    "coffee": "Coffee",
+    "farmer_seed": "Farmer/Seed",
+    "fruits": "Fruits",
+    "vegetables": "Vegetables",
+    "spices": "Spices",
+    "indian_lentils": "Lentils",
+    "nuts": "Nuts",
+    "chicken": "Chicken",
+    "egg": "Egg",
+    "fish": "Fish",
+    "mutton": "Mutton",
+    "green_tea": "Green Tea",
+    "red_tea": "Red Tea",
+    "grocery": "Grocery",
+    "grocery_segmentation": "Grocery Ingredients",
+}
+
+
+def vision_display_name(name: str) -> str:
+    canonical = resolve_model_name(name)
+    return VISION_DISPLAY_NAMES.get(canonical, canonical.replace("_", " ").title())
 
 
 def resolve_model_name(name: str) -> str:

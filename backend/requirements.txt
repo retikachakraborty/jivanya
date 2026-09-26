@@ -12,3 +12,4 @@ ultralytics==8.4.155
 python-dotenv
 psycopg2-binary
 python-multipart
+groq==0.31.0

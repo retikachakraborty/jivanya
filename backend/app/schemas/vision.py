@@ -5,6 +5,7 @@ from app.schemas.nutrition import FoodItemResponse
 
 class VisionPrediction(BaseModel):
     label: str
+    canonical: str | None = None
     confidence: float = Field(ge=0, le=1)
     bbox: list[float] | None = None
     segmentation: list[list[float]] | None = None
@@ -31,6 +32,7 @@ class VisionPredictionResponse(BaseModel):
 
 class VisionModelInfo(BaseModel):
     name: str
+    display_name: str
     module: str
     model_type: str
     task: str | None = None

@@ -19,7 +19,7 @@ def list_products(query: Optional[str]=Query(None), brand: Optional[str]=Query(N
     field=_SORT_FIELDS.get(sort or "")
     if field:
         column=getattr(Product,field); statement=statement.order_by((column.desc() if order=="desc" else column.asc()).nullslast())
-    else: statement=statement.order_by(Product.product_name.asc())
+    else: statement=statement.order_by(Product.image_url.is_(None).asc(), Product.product_name.asc())
     return ProductListResponse(items=statement.offset(offset).limit(limit).all(),total=total,offset=offset,limit=limit)
 
 @router.get("/{barcode}", response_model=ProductItem)
@@ -35,5 +35,31 @@ def compare_products(payload: ProductCompareRequest, db: Session=Depends(get_db)
     products=db.query(Product).filter(Product.barcode.in_(barcodes)).all()
     by_barcode={product.barcode:product for product in products}
     missing=[barcode for barcode in barcodes if barcode not in by_barcode]
-    if missing: raise HTTPException(status_code=404, detail=f"Products not found: {missing}")
     return ProductCompareResponse(items=[by_barcode[barcode] for barcode in barcodes])
+
+from app.api.health_score import get_product_scorecard_data
+from app.schemas.health_score import ProductScoreResponse
+
+@router.get("/{barcode}/score", response_model=ProductScoreResponse)
+def get_product_health_score(
+    barcode: int,
+    allergies: Optional[str] = Query(None, description="Comma-separated user allergies"),
+    exclusions: Optional[str] = Query(None, description="Comma-separated user exclusions"),
+    diet: Optional[str] = Query(None, description="User diet preference"),
+    db: Session = Depends(get_db)
+):
+    product = db.query(Product).filter(Product.barcode == barcode).first()
+    if not product:
+        raise HTTPException(status_code=404, detail="Product not found")
+
+    user_allergies = [a.strip() for a in allergies.split(",")] if allergies else None
+    user_exclusions = [e.strip() for e in exclusions.split(",")] if exclusions else None
+
+    scorecard = get_product_scorecard_data(
+        product=product,
+        db=db,
+        user_allergies=user_allergies,
+        user_exclusions=user_exclusions,
+        user_diet=diet,
+    )
+    return ProductScoreResponse(product=ProductItem.model_validate(product), scorecard=scorecard)

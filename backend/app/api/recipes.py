@@ -366,6 +366,7 @@ def list_recipes(
         total=total,
         offset=offset,
         limit=limit,
+        status="FOUND" if recipes else "NO_DATABASE_MATCH",
         ignored_ingredients=[],
     )
 
@@ -389,6 +390,7 @@ def matching_recipes(
     if not safe_terms:
         return RecipeListResponse(
             items=[], total=0, offset=offset, limit=limit,
+            status="BLOCKED_BY_DIETARY_RESTRICTION" if (no_onion or no_garlic or diet) else "BLOCKED_BY_ALLERGY",
             ignored_ingredients=rejected_terms,
         )
     expanded = _expand_ingredient_terms(db, safe_terms)
@@ -414,6 +416,7 @@ def matching_recipes(
         total=total,
         offset=offset,
         limit=limit,
+        status="FOUND" if recipes else ("NO_DATABASE_MATCH" if not rejected_terms else "BLOCKED_BY_ALLERGY"),
         ignored_ingredients=rejected_terms,
     )
 

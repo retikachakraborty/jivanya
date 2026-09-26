@@ -1,0 +1,52 @@
+path: /home/mousumi/Documents/final project/jivanya/database/vision_engine/farmer_seed/processed/indian_ingredients
+
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 43
+
+names:
+  - angle-gourd
+  - basil seeds
+  - beetroot seed
+  - bitter-gourd
+  - brown bean
+  - cabbage
+  - carrot
+  - chia
+  - chickpea
+  - coffee beans
+  - corn
+  - cucumber seeds
+  - egusi seeds
+  - fennel
+  - flax seeds
+  - garlic seeds
+  - grape seeds
+  - hemp seeds
+  - jackfruit
+  - lotus seeds
+  - mint seeds
+  - muskmelon
+  - mustard seeds
+  - nigella seeds
+  - oats seeds
+  - onion seeds
+  - peanut seeds
+  - pinenut seeds
+  - poppy seeds
+  - potato seeds
+  - pumpkin
+  - radish seeds
+  - rice seeds
+  - sesame seeds
+  - soya
+  - split red lentils
+  - sugar-pea
+  - sunflower
+  - watermelon seeds
+  - waxgourd
+  - wheat
+  - wingbean
+  - yardlong-bean

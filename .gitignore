@@ -1,14 +1,10 @@
-# =========================
-# Environment / secrets
-# =========================
+# Secrets
 .env
 .env.local
 .env.*.local
 !.env.example
 
-# =========================
-# Python
-# =========================
+# Python environments / caches
 .venv/
 **/.venv/
 venv/
@@ -21,11 +17,11 @@ __pycache__/
 .ruff_cache/
 .ipynb_checkpoints/
 
-# =========================
-# Node / frontend
-# =========================
+# Node / frontend dependencies and build output
 node_modules/
+**/node_modules/
 .next/
+**/.next/
 out/
 dist/
 build/
@@ -35,9 +31,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# =========================
 # IDE / OS
-# =========================
 .vscode/
 .idea/
 .DS_Store
@@ -46,9 +40,7 @@ Thumbs.db
 *.swp
 *.swo
 
-# =========================
 # ML generated files
-# =========================
 runs/
 **/runs/
 *.cache
@@ -57,8 +49,11 @@ runs/
 database/vision_engine/**/test_images/
 
 # Raw / processed vision datasets
-database/vision_engine/**/raw/
-database/vision_engine/**/processed/
+database/vision_engine/coffee/raw/
+database/vision_engine/nuts/raw/
+database/vision_engine/tea/raw/
+database/vision_engine/indian_lentils/raw/
+database/vision_engine/non-veg/chicken/raw/
 
 # Specific Indian ingredients training artifacts
 database/vision_engine/indian_ingredients/.venv/
@@ -71,9 +66,7 @@ database/vision_engine/indian_ingredients/yolo11n-seg/
 *.engine
 *.torchscript
 
-# =========================
 # Archives / downloads
-# =========================
 *.zip
 *.tar
 *.tar.gz
@@ -82,15 +75,9 @@ database/vision_engine/indian_ingredients/yolo11n-seg/
 *.7z
 *.rar
 
-# =========================
 # Logs / temporary files
-# =========================
 *.log
+
+# Temporary files
 tmp/
 temp/
-
-# Secrets
-.env
-.env.local
-.env.*.local
-!.env.example

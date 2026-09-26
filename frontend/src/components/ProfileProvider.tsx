@@ -18,6 +18,7 @@ const ProfileContext = createContext<ProfileContextValue | undefined>(undefined)
 type ProfileRow = { id: string; display_name: string | null; onboarding_completed: boolean; dietary_preference: string | null; no_onion: boolean; no_garlic: boolean; cuisine_preferences: string[] | null };
 type IngredientRow = { ingredient: string };
 const diet = (value: string | null): DietPreference => value === "vegetarian" || value === "vegan" || value === "diabetic friendly" ? value : "no preference";
+const booleanValue = (value: boolean | string | number | null | undefined) => value === true || value === 1 || (typeof value === "string" && value.trim().toLowerCase() === "true");
 
 export function ProfileProvider({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
@@ -41,7 +42,7 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
       setProfileLoading(false);
       return;
     }
-    setProfile({ id: row.id, displayName: row.display_name || user.user_metadata.display_name || "", onboardingCompleted: row.onboarding_completed, dietPreference: diet(row.dietary_preference), allergies: (allergiesResult.data as IngredientRow[] | null)?.map((item) => item.ingredient) ?? [], exclusions: (exclusionsResult.data as IngredientRow[] | null)?.map((item) => item.ingredient) ?? [], noOnion: row.no_onion, noGarlic: row.no_garlic, cuisinePreferences: row.cuisine_preferences ?? [] });
+    setProfile({ id: row.id, displayName: row.display_name || user.user_metadata.display_name || "", onboardingCompleted: booleanValue(row.onboarding_completed), dietPreference: diet(row.dietary_preference), allergies: (allergiesResult.data as IngredientRow[] | null)?.map((item) => item.ingredient.trim().toLowerCase()).filter(Boolean) ?? [], exclusions: (exclusionsResult.data as IngredientRow[] | null)?.map((item) => item.ingredient.trim().toLowerCase()).filter(Boolean) ?? [], noOnion: booleanValue(row.no_onion), noGarlic: booleanValue(row.no_garlic), cuisinePreferences: row.cuisine_preferences ?? [] });
     setProfileLoading(false);
   }, [user]);
 

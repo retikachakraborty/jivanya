@@ -7,7 +7,7 @@ import { Brand } from "./Brand";
 import { useAuth } from "./AuthProvider";
 import { useProfile } from "./ProfileProvider";
 
-const items = [["⌂", "Home", "/app"], ["◒", "Recipes", "/app/recipes"], ["♨", "Cook", "/app/cook"], ["◌", "Nutrition", "/app/nutrition"], ["▧", "Products", "/app/products"], ["✦", "Jiv", "/app/jiv"], ["○", "Profile", "/app/profile"]] as const;
+const items = [["⌂", "Home", "/app"], ["◒", "Recipes", "/app/recipes"], ["📅", "Meal Plan", "/app/meal-plan"], ["◌", "Nutrition", "/app/nutrition"], ["▧", "Products", "/app/products"], ["✦", "Jiv", "/app/jiv"], ["○", "Profile", "/app/profile"]] as const;
 
 function Gate({ children }: { children: React.ReactNode }) {
   const router = useRouter();
